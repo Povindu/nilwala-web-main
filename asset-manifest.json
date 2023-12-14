@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Povindu/nilwala-tm-client/static/css/main.f292d796.css",
-    "main.js": "/Povindu/nilwala-tm-client/static/js/main.c80014b4.js",
-    "static/media/Background.png": "/Povindu/nilwala-tm-client/static/media/Background.af2abfd2dcc3bc93b1a5.png",
-    "index.html": "/Povindu/nilwala-tm-client/index.html",
-    "main.f292d796.css.map": "/Povindu/nilwala-tm-client/static/css/main.f292d796.css.map",
-    "main.c80014b4.js.map": "/Povindu/nilwala-tm-client/static/js/main.c80014b4.js.map"
+    "main.css": "/nilwala-tm-client/static/css/main.23adb02b.css",
+    "main.js": "/nilwala-tm-client/static/js/main.e13be172.js",
+    "static/media/Background.png": "/nilwala-tm-client/static/media/Background.af2abfd2dcc3bc93b1a5.png",
+    "index.html": "/nilwala-tm-client/index.html",
+    "main.23adb02b.css.map": "/nilwala-tm-client/static/css/main.23adb02b.css.map",
+    "main.e13be172.js.map": "/nilwala-tm-client/static/js/main.e13be172.js.map"
   },
   "entrypoints": [
-    "static/css/main.f292d796.css",
-    "static/js/main.c80014b4.js"
+    "static/css/main.23adb02b.css",
+    "static/js/main.e13be172.js"
   ]
 }
