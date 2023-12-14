@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/nilwala-tm-client/static/css/main.23adb02b.css",
-    "main.js": "/nilwala-tm-client/static/js/main.e13be172.js",
+    "main.css": "/nilwala-tm-client/static/css/main.7d36e327.css",
+    "main.js": "/nilwala-tm-client/static/js/main.917c0b11.js",
     "static/media/Background.png": "/nilwala-tm-client/static/media/Background.af2abfd2dcc3bc93b1a5.png",
     "index.html": "/nilwala-tm-client/index.html",
-    "main.23adb02b.css.map": "/nilwala-tm-client/static/css/main.23adb02b.css.map",
-    "main.e13be172.js.map": "/nilwala-tm-client/static/js/main.e13be172.js.map"
+    "main.7d36e327.css.map": "/nilwala-tm-client/static/css/main.7d36e327.css.map",
+    "main.917c0b11.js.map": "/nilwala-tm-client/static/js/main.917c0b11.js.map"
   },
   "entrypoints": [
-    "static/css/main.23adb02b.css",
-    "static/js/main.e13be172.js"
+    "static/css/main.7d36e327.css",
+    "static/js/main.917c0b11.js"
   ]
 }
