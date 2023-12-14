@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Povindu/nilwala-tm-client/static/css/main.f292d796.css",
+    "main.js": "/Povindu/nilwala-tm-client/static/js/main.c80014b4.js",
+    "static/media/Background.png": "/Povindu/nilwala-tm-client/static/media/Background.af2abfd2dcc3bc93b1a5.png",
+    "index.html": "/Povindu/nilwala-tm-client/index.html",
+    "main.f292d796.css.map": "/Povindu/nilwala-tm-client/static/css/main.f292d796.css.map",
+    "main.c80014b4.js.map": "/Povindu/nilwala-tm-client/static/js/main.c80014b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f292d796.css",
+    "static/js/main.c80014b4.js"
+  ]
+}
