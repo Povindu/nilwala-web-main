@@ -1,0 +1,20 @@
+*{
+    color: #dff7ff;
+}
+
+.FDinner{
+    padding: 30px;
+}
+
+.ticketPrice{
+    font-size: 25px;
+}
+.paymentMethod
+{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.contactInfo{
+    margin-top: 3vw;
+}
