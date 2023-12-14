@@ -6,6 +6,7 @@
 }
 
 body{
+
   background-repeat: no-repeat;
   background-image: url('./assets/Background.png');
 }
@@ -19,6 +20,7 @@ body{
     margin: auto;
     align-items: center;
     height: 60%;
+    margin-bottom: 50px;
 }
 
 .FormDetailsCN{
@@ -37,12 +39,16 @@ body{
 
 
 @media (max-width: 800px) {
+    body{
+        height: 180vh;
+    }
     .mainContainer {
         flex-direction: column;
         width: 100%;
     }
     .FormDetailsCN{
         width:80% !important;
+        height: 400px;
     }
     .FormCompCN{
         width:80% !important;
