@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.d01c56c6.css",
-    "main.js": "/static/js/main.938141de.js",
-    "static/media/Background.png": "/static/media/Background.af2abfd2dcc3bc93b1a5.png",
-    "static/media/nadil.PNG": "/static/media/nadil.dc03f5d0db6e365bda95.PNG",
-    "static/media/uvindu.png": "/static/media/uvindu.bc16908160a4c2395e29.png",
-    "static/media/kashyapa.PNG": "/static/media/kashyapa.406a8d1e15c3c942bde2.PNG",
-    "static/media/flag2.png": "/static/media/flag2.f98618019b1dfff4adba.png",
-    "static/media/pngwing.com.png": "/static/media/pngwing.com.ffd67b70cb94d2bdd2b9.png",
-    "static/media/rachitha.png": "/static/media/rachitha.75e4c25edc5be837b003.png",
-    "static/media/Sathira.PNG": "/static/media/Sathira.9a932f37cb1f6a43a7f9.PNG",
-    "static/media/nrimal.png": "/static/media/nrimal.6b592af27342413077bd.png",
-    "static/media/seran.png": "/static/media/seran.93ca4ca8305d56f5b220.png",
-    "static/media/nationalflag1.png": "/static/media/nationalflag1.3f89687c672b0923d2ed.png",
-    "static/media/Leo-Logo.png": "/static/media/Leo-Logo.f11aa3795a909622e5ef.png",
-    "static/media/Nadun.PNG": "/static/media/Nadun.e8a6e59deffbb13852e7.PNG",
-    "static/media/Povindu.PNG": "/static/media/Povindu.d8fedbbbe33dbd956816.PNG",
-    "static/media/naveen.png": "/static/media/naveen.9e97b63351965488bfb1.png",
-    "static/media/club_logo.png": "/static/media/club_logo.49406b0c5d011ea7c801.png",
-    "index.html": "/index.html",
-    "main.d01c56c6.css.map": "/static/css/main.d01c56c6.css.map",
-    "main.938141de.js.map": "/static/js/main.938141de.js.map"
+    "main.css": "/nilwala-tm-client/static/css/main.fcb86014.css",
+    "main.js": "/nilwala-tm-client/static/js/main.c5c01e39.js",
+    "static/media/Background.png": "/nilwala-tm-client/static/media/Background.af2abfd2dcc3bc93b1a5.png",
+    "static/media/nadil.PNG": "/nilwala-tm-client/static/media/nadil.dc03f5d0db6e365bda95.PNG",
+    "static/media/uvindu.png": "/nilwala-tm-client/static/media/uvindu.bc16908160a4c2395e29.png",
+    "static/media/kashyapa.PNG": "/nilwala-tm-client/static/media/kashyapa.406a8d1e15c3c942bde2.PNG",
+    "static/media/flag2.png": "/nilwala-tm-client/static/media/flag2.f98618019b1dfff4adba.png",
+    "static/media/pngwing.com.png": "/nilwala-tm-client/static/media/pngwing.com.ffd67b70cb94d2bdd2b9.png",
+    "static/media/rachitha.png": "/nilwala-tm-client/static/media/rachitha.75e4c25edc5be837b003.png",
+    "static/media/Sathira.PNG": "/nilwala-tm-client/static/media/Sathira.9a932f37cb1f6a43a7f9.PNG",
+    "static/media/nrimal.png": "/nilwala-tm-client/static/media/nrimal.6b592af27342413077bd.png",
+    "static/media/seran.png": "/nilwala-tm-client/static/media/seran.93ca4ca8305d56f5b220.png",
+    "static/media/nationalflag1.png": "/nilwala-tm-client/static/media/nationalflag1.3f89687c672b0923d2ed.png",
+    "static/media/Leo-Logo.png": "/nilwala-tm-client/static/media/Leo-Logo.f11aa3795a909622e5ef.png",
+    "static/media/Nadun.PNG": "/nilwala-tm-client/static/media/Nadun.e8a6e59deffbb13852e7.PNG",
+    "static/media/Povindu.PNG": "/nilwala-tm-client/static/media/Povindu.d8fedbbbe33dbd956816.PNG",
+    "static/media/naveen.png": "/nilwala-tm-client/static/media/naveen.9e97b63351965488bfb1.png",
+    "static/media/club_logo.png": "/nilwala-tm-client/static/media/club_logo.49406b0c5d011ea7c801.png",
+    "index.html": "/nilwala-tm-client/index.html",
+    "main.fcb86014.css.map": "/nilwala-tm-client/static/css/main.fcb86014.css.map",
+    "main.c5c01e39.js.map": "/nilwala-tm-client/static/js/main.c5c01e39.js.map"
   },
   "entrypoints": [
-    "static/css/main.d01c56c6.css",
-    "static/js/main.938141de.js"
+    "static/css/main.fcb86014.css",
+    "static/js/main.c5c01e39.js"
   ]
 }
