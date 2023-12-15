@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.42383df1.css",
+    "main.css": "/static/css/main.b002c1c0.css",
     "main.js": "/static/js/main.1642a3e7.js",
     "static/media/Background.png": "/static/media/Background.af2abfd2dcc3bc93b1a5.png",
     "static/media/nadil.PNG": "/static/media/nadil.dc03f5d0db6e365bda95.PNG",
@@ -19,11 +19,11 @@
     "static/media/naveen.png": "/static/media/naveen.9e97b63351965488bfb1.png",
     "static/media/club_logo.png": "/static/media/club_logo.49406b0c5d011ea7c801.png",
     "index.html": "/index.html",
-    "main.42383df1.css.map": "/static/css/main.42383df1.css.map",
+    "main.b002c1c0.css.map": "/static/css/main.b002c1c0.css.map",
     "main.1642a3e7.js.map": "/static/js/main.1642a3e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.42383df1.css",
+    "static/css/main.b002c1c0.css",
     "static/js/main.1642a3e7.js"
   ]
 }
