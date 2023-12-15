@@ -1,5 +1,6 @@
-*{
+.FDouter *{
     color: #dff7ff;
+    font-family: 'Poppins', sans-serif;
 }
 
 .FDinner{

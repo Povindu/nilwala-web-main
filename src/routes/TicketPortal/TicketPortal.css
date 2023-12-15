@@ -5,10 +5,14 @@
     padding: 0%;
 }
 
-body{
-
-  background-repeat: no-repeat;
-  background-image: url('./assets/Background.png');
+.App{
+    border: 1px solid rgb(19, 50, 91);
+    /* border: none; */
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/Background.png');
 }
 
 
@@ -20,7 +24,7 @@ body{
     margin: auto;
     align-items: center;
     height: 60%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .FormDetailsCN{
@@ -39,7 +43,7 @@ body{
 
 
 @media (max-width: 800px) {
-    body{
+    .app{
         height: 180vh;
     }
     .mainContainer {

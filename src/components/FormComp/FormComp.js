@@ -1,9 +1,13 @@
 import React from 'react';
 import {db, storage} from '../../config/config';
 import {ref as sRef,uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import {ref, set, onValue, get, getDatabase, child} from "firebase/database";
-import { useReducer, useRef, useState, useEffect } from 'react';
+import {ref, set, get, child} from "firebase/database";
+import { useRef, useState, useEffect } from 'react';
 import { useFormik } from 'formik'
+import { confirmAlert } from 'react-confirm-alert';
+
+
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import './FormStyle.css';
 
@@ -15,10 +19,9 @@ const FormComp = () => {
   const [file, setFile] = useState("");
   const [percent, setPercent] = useState(0);
   const [imgURL, setImgURL] = useState();
-  const [value, setValue] = useState(0);
-  const [, forceUpdate] = useReducer(x => x + 1, 0);
 
   const onOptionChange = e => {
+
     setPosition(e.target.value)
 
     if((position === "prospect" || position === "leo")){
@@ -53,22 +56,67 @@ const FormComp = () => {
   
 
   function handleImage(event) {
-    setFile(event.target.files[0]);
+
+    const fileExtension = event.target.files[0].name.split(".").at(-1);
+    const allowedFileTypes = ["jpg", "png", "jpeg", "webp" ];
+
+
+    if(event.target.files[0].size > 50000000){
+      alert("Image size is too large! Please select another image below 50mb.");
+      event.target.value = "";
+      event.target.type = "file";
+
+    }
+    else {
+      if (allowedFileTypes.includes(fileExtension)) {
+        setFile(event.target.files[0]); 
+      }
+      else{
+        alert(`Uploaded Filetype is not supported.\nFiletype must be ${allowedFileTypes.join(", ")}`);
+        event.target.value = "";
+        event.target.type = "file";
+      }
+    }
+    
+  }
+
+
+  const confirmSubmit = () => {
+    confirmAlert({
+      title: 'Confirm to submit the ticket',
+      message: 'Confirm to submit the ticket',
+      buttons: [
+        {
+          label: 'Confirm',
+          onClick: () => {
+              if (!file) {
+                alert("Please upload an image first!");
+              }
+              else{
+                formik.handleSubmit();
+              }
+          }
+        },
+        {
+          label: 'Back',
+          onClick: () => {
+            alert('Click No')
+          }
+        }
+      ]
+    });
   }
 
 
   // Upload image to firebase storage
   const handleUpload = () => {
-    if (!file) {
-        alert("Please upload an image first!");
-    }
 
     const storageRef = sRef(storage, `/formDataUpload/${file.name}_F${lastFormID+1}.jpg`);
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
     const uploadTask = uploadBytesResumable(storageRef, file);
-
+    
     uploadTask.on(
         "state_changed",
         (snapshot) => {
@@ -109,9 +157,18 @@ const FormComp = () => {
       email: '',
       club: '',
     },
+
+    // validationSchema: Yup.object({
+    //   fullName: Yup.string().required('Required field'),
+    //   mobileNo: Yup.string().required('Required field'),
+    //   email: Yup.number().required('Required field'),
+    //   club: Yup.string().required('Required field'),
+    // }),
+
     onSubmit: (values, {resetForm}) => {
 
-      resetForm({})
+    resetForm({})
+    setPosition();
 
     const data = {
       fullName: values.fullName,
@@ -144,6 +201,7 @@ const FormComp = () => {
 
 
   return (
+    <div className="formContainer">
       <form onSubmit={formik.handleSubmit}>
         <div className="container">
           <div className="divName d">
@@ -159,8 +217,8 @@ const FormComp = () => {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.fullName}
-              required
-              minLength="3"
+              required={true}
+              minLength={3}
             />
           </div>
 
@@ -174,11 +232,11 @@ const FormComp = () => {
               className='InpMobile i'
               id="mobileNo"
               name="mobileNo"
-              type="tel"
+              type="number"
               onChange={formik.handleChange}
               value={formik.values.mobileNo}
-              required
-              minLength="10"
+              required={true}
+              minLength={10}
             />
           </div>
 
@@ -196,7 +254,7 @@ const FormComp = () => {
               type="email"
               onChange={formik.handleChange}
               value={formik.values.email}
-              required
+              required= {true}
             />
           </div>
 
@@ -204,7 +262,7 @@ const FormComp = () => {
           <div className="position d">
             
             <div className="nilwalaPos">
-              <p>Nilwala Leos</p>
+              <p>For Nilwala Leos</p>
               <div>
                 <input type="radio" id="prospect" name="status" value="prospect" checked={position === "prospect"} onChange={onOptionChange} />
                 <label for="prospect"> Prospect</label>
@@ -217,7 +275,7 @@ const FormComp = () => {
             </div>
 
             <div className="visitPos">
-              <p>Visiting Leos</p>
+              <p>For Guest Leos</p>
               <div>
                 <input type="radio" id="council" name="status" value="council" checked={position === "council"} onChange={onOptionChange} />
                 <label for="council"> Council Officer</label>
@@ -242,13 +300,13 @@ const FormComp = () => {
             { 
             !(position === "prospect" || position === "leo") &&
               <input
-              className='InpEmail i'
+              className='InpClub i'
                 id="club"
                 name="club"
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.club}
-                required
+                required={true}
                 enabled
               />
             }
@@ -256,13 +314,13 @@ const FormComp = () => {
             { 
             (position === "prospect" || position === "leo") &&
               <input
-              className='InpEmail i'
+              className='InpClub i'
                 id="club"
                 name="club"
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.club = "Leo Club of Matara Nilwala"}
-                required
+                required={true}
                 disabled
               />
               
@@ -303,6 +361,7 @@ const FormComp = () => {
 
 
       </form>
+    </div>
    );
 
 
