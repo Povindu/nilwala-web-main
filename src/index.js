@@ -5,23 +5,33 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import HomePage from './routes/HomePage/HomePage'
+import './index.css';
+
+// import HomePage from './routes/HomePage/HomePage'
 import TicketPortal from './routes/TicketPortal/TicketPortal'
 import ErrorPage from './routes/ErrorPage/ErrorPage';
+import ChroniclePage from './routes/ChroniclePage/ChroniclePage';
+import DirectoryPage from './routes/DirectoryPage/DirectoryPage.js';
+
+import HomePageComp from './components/HomePageComp/HomePageComp';
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage/>,
-      errorElement: <ErrorPage />,
+      element: <HomePageComp/>,
+      // errorElement: <ErrorPage />,
     },
     {
-      path: "/123",
-      element: <h1>Test</h1>,
-    },
-    {
-      path: "/app",
+      path: "/nilwalanight23",
       element: <TicketPortal/>,
+    },
+    {
+      path: "/chronicle",
+      element: <ChroniclePage/>,
+    },
+    {
+      path: "/directory",
+      element: <DirectoryPage/>,
     },
   ]);
 
