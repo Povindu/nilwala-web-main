@@ -17,20 +17,20 @@ import HomePageComp from './components/HomePageComp/HomePageComp';
 
 const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/nilwala-web-main",
       element: <HomePageComp/>,
       errorElement: <ErrorPage />,
     },
     {
-      path: "/nilwalanight23",
+      path: "/nilwala-web-main/nilwalanight23",
       element: <TicketPortal/>,
     },
     {
-      path: "/chronicle",
+      path: "/nilwala-web-main/chronicle",
       element: <ChroniclePage/>,
     },
     {
-      path: "/directory",
+      path: "/nilwala-web-main/directory",
       element: <DirectoryPage/>,
     },
   ]);
