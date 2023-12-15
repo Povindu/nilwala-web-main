@@ -144,6 +144,7 @@ const FormComp = () => {
 
 
   return (
+    <div className="formContainer">
       <form onSubmit={formik.handleSubmit}>
         <div className="container">
           <div className="divName d">
@@ -303,6 +304,7 @@ const FormComp = () => {
 
 
       </form>
+    </div>
    );
 
 
