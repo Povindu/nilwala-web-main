@@ -43,8 +43,8 @@
 
 
 @media (max-width: 800px) {
-    .app{
-        height: 180vh;
+    .App{
+        height: 200vh !important;
     }
     .mainContainer {
         flex-direction: column;
@@ -52,7 +52,6 @@
     }
     .FormDetailsCN{
         width:80% !important;
-        height: 400px;
     }
     .FormCompCN{
         width:80% !important;
