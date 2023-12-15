@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePageComp/>,
-      // errorElement: <ErrorPage />,
+      errorElement: <ErrorPage />,
     },
     {
       path: "/nilwalanight23",
