@@ -22,9 +22,9 @@ export default function HomePageComp() {
             <li className="bar">
             <Link to='/chronicle' className='button'>Nilwala Chronicle</Link>
             </li>
-            <li className="bar">
-            {/* <Link to='/directory' className='button'>Club Directory</Link> */}
-            </li>
+            {/* <li className="bar">
+            <Link to='/directory' className='button'>Club Directory</Link>
+            </li> */}
             
             {/* <li className="bar">
               <a href="index.html">Sign In</a>
