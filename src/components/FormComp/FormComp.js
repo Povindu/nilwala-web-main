@@ -110,42 +110,45 @@ const FormComp = () => {
 
   // Upload image to firebase storage
   const handleUpload = () => {
+    if (!file) {
+      alert("Please upload an image first!");
+    }
+    else{
 
-    const storageRef = sRef(storage, `/formDataUpload/${file.name}_F${lastFormID+1}.jpg`);
+      const storageRef = sRef(storage, `/formDataUpload/${file.name}_F${lastFormID+1}.jpg`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      
+      uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+              const percent = Math.round(
+                  (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+              );
 
-    // progress can be paused and resumed. It also exposes progress updates.
-    // Receives the storage reference and the file to upload.
-    const uploadTask = uploadBytesResumable(storageRef, file);
+              // update progress
+              setPercent(percent);
+          },
+          (err) => console.log(err),
+          () => {
+                  // Download url
+                  getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                      
+                      setImgURL(url);
+
+                      // Update last form ID by incrementing
+                      set(ref(db, 'formData/lastFormID'), (lastFormID+1))
+                      .then( () => {
+                        // Success
+                      })
+                      .catch( (error) => {
+                        console.log(error);
+                      });
+
+                  });
+                }
+        );
+      }
     
-    uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-            const percent = Math.round(
-                (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            );
-
-            // update progress
-            setPercent(percent);
-        },
-        (err) => console.log(err),
-        () => {
-                // Download url
-                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-                    
-                    setImgURL(url);
-
-                    // Update last form ID by incrementing
-                    set(ref(db, 'formData/lastFormID'), (lastFormID+1))
-                    .then( () => {
-                      // Success
-                    })
-                    .catch( (error) => {
-                      console.log(error);
-                    });
-
-                });
-              }
-      );
   };
 
 
@@ -264,7 +267,7 @@ const FormComp = () => {
             <div className="nilwalaPos">
               <p>For Nilwala Leos</p>
               <div>
-                <input type="radio" id="prospect" name="status" value="prospect" checked={position === "prospect"} onChange={onOptionChange} />
+                <input type="radio" id="prospect" name="status" value="prospect" required={true} checked={position === "prospect"} onChange={onOptionChange} />
                 <label for="prospect"> Prospect</label>
               </div>
 
@@ -347,6 +350,7 @@ const FormComp = () => {
           <div className="divupload">
 
           {(percent > 0) && <p className='imgUploadp'> Image upload {percent}% Done</p> }
+
           {(!imgURL) && <button type='button' onClick={handleUpload}>Upload Image</button>}
             
           </div>
