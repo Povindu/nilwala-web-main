@@ -196,6 +196,8 @@ const FormComp = () => {
     }).catch( (error) => {
       console.log(error);
     });
+
+    alert("Form submitted successfully! Admin will verify your details and send you a confirmation email soon.");
     
       
     }
