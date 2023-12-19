@@ -16,7 +16,7 @@ export default function FormDetails() {
 
             1. Make the payment to the following account.<br/>
             2. Fill the registration form and upload the payment slip.<br/>
-            3. Submit the the form<br/>
+            3. Submit the form<br/>
             <br/>
             <p className='detailP'>After verifying the payment, you will recieve a confirmation email within few hours.<br/></p>
             <br/>

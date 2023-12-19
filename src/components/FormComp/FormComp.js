@@ -19,13 +19,14 @@ const FormComp = () => {
   const [file, setFile] = useState("");
   const [percent, setPercent] = useState(0);
   const [imgURL, setImgURL] = useState();
+  const [resetData, setResetData] = useState(false);
+
+
 
   const onOptionChange = e => {
 
     setPosition(e.target.value)
-
-    if((position === "prospect" || position === "leo")){
-      
+    if((position === "Prospect" || position === "Leo")){
       formik.values.club = "Leo Club of Matara Nilwala";
     }
     else{
@@ -33,9 +34,9 @@ const FormComp = () => {
     }
   }
 
-  // Get the last form ID when the component is mounted
-  useEffect( () => {  
 
+
+  function getLastFormID(){
     get(child(ref(db), 'formData/'))
       .then((snapshot) => {
         if (snapshot.exists()) {
@@ -49,8 +50,12 @@ const FormComp = () => {
       .catch((error) => {
         console.error(error);
       });
-    
 
+  }
+
+  // Get the last form ID when the component is mounted
+  useEffect( () => {  
+    getLastFormID();
   }, []);
 
   
@@ -81,31 +86,31 @@ const FormComp = () => {
   }
 
 
-  const confirmSubmit = () => {
-    confirmAlert({
-      title: 'Confirm to submit the ticket',
-      message: 'Confirm to submit the ticket',
-      buttons: [
-        {
-          label: 'Confirm',
-          onClick: () => {
-              if (!file) {
-                alert("Please upload an image first!");
-              }
-              else{
-                formik.handleSubmit();
-              }
-          }
-        },
-        {
-          label: 'Back',
-          onClick: () => {
-            alert('Click No')
-          }
-        }
-      ]
-    });
-  }
+  // const confirmSubmit = () => {
+  //   confirmAlert({
+  //     title: 'Confirm to submit the ticket',
+  //     message: 'Confirm to submit the ticket',
+  //     buttons: [
+  //       {
+  //         label: 'Confirm',
+  //         onClick: () => {
+  //             if (!file) {
+  //               alert("Please upload an image first!");
+  //             }
+  //             else{
+  //               formik.handleSubmit();
+  //             }
+  //         }
+  //       },
+  //       {
+  //         label: 'Back',
+  //         onClick: () => {
+  //           alert('Click No')
+  //         }
+  //       }
+  //     ]
+  //   });
+  // }
 
 
   // Upload image to firebase storage
@@ -161,12 +166,6 @@ const FormComp = () => {
       club: '',
     },
 
-    // validationSchema: Yup.object({
-    //   fullName: Yup.string().required('Required field'),
-    //   mobileNo: Yup.string().required('Required field'),
-    //   email: Yup.number().required('Required field'),
-    //   club: Yup.string().required('Required field'),
-    // }),
 
     onSubmit: (values, {resetForm}) => {
 
@@ -198,8 +197,10 @@ const FormComp = () => {
     });
 
     alert("Form submitted successfully! Admin will verify your details and send you a confirmation email soon.");
-    
-      
+    setLastFormID(null);
+    getLastFormID();
+
+
     }
   });
 
@@ -269,12 +270,12 @@ const FormComp = () => {
             <div className="nilwalaPos">
               <p>For Nilwala Leos</p>
               <div>
-                <input type="radio" id="prospect" name="status" value="prospect" required={true} checked={position === "prospect"} onChange={onOptionChange} />
+                <input type="radio" id="prospect" name="status" value="Prospect" required={true} checked={position === "Prospect"} onChange={onOptionChange} />
                 <label for="prospect"> Prospect</label>
               </div>
 
               <div>
-                <input type="radio" id="leo" name="status" value="leo" checked={position === "leo"} onChange={onOptionChange}/>
+                <input type="radio" id="leo" name="status" value="Leo" checked={position === "Leo"} onChange={onOptionChange}/>
                 <label for="leo"> Leo</label>
               </div>
             </div>
@@ -282,12 +283,12 @@ const FormComp = () => {
             <div className="visitPos">
               <p>For Guest Leos</p>
               <div>
-                <input type="radio" id="council" name="status" value="council" checked={position === "council"} onChange={onOptionChange} />
+                <input type="radio" id="council" name="status" value="Council" checked={position === "Council"} onChange={onOptionChange} />
                 <label for="council"> Council Officer</label>
               </div>
 
               <div>
-                <input type="radio" id="visiting" name="status" value="visitng" checked={position === "visitng"} onChange={onOptionChange} />
+                <input type="radio" id="visiting" name="status" value="Visitng" checked={position === "Visitng"} onChange={onOptionChange} />
                 <label for="visiting"> Visiting Leo</label>
               </div>
             </div>
@@ -303,7 +304,7 @@ const FormComp = () => {
             </div>
 
             { 
-            !(position === "prospect" || position === "leo") &&
+            !(position === "Prospect" || position === "Leo") &&
               <input
               className='InpClub i'
                 id="club"
@@ -317,7 +318,7 @@ const FormComp = () => {
             }
 
             { 
-            (position === "prospect" || position === "leo") &&
+            (position === "Prospect" || position === "Leo") &&
               <input
               className='InpClub i'
                 id="club"
@@ -328,8 +329,6 @@ const FormComp = () => {
                 required={true}
                 disabled
               />
-              
-               
             }
           </div>
 
@@ -340,6 +339,8 @@ const FormComp = () => {
                 className='LabFile'
                 htmlFor="file">Upload Payment Proof Image</label>
             </div>
+
+
           <input 
             className='InpFile'
             type="file" 
@@ -350,11 +351,8 @@ const FormComp = () => {
 
 
           <div className="divupload">
-
-          {(percent > 0) && <p className='imgUploadp'> Image upload {percent}% Done</p> }
-
-          {(!imgURL) && <button type='button' onClick={handleUpload}>Upload Image</button>}
-            
+            {(percent > 0) && <p className='imgUploadp'> Image upload {percent}% Done</p> }
+            {(!imgURL) && (lastFormID !== null) && <button type='button' className="upload-btn" onClick={handleUpload}>Upload Image</button>}
           </div>
         
           <div className="divSubmit">

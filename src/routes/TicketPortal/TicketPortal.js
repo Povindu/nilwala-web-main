@@ -14,6 +14,10 @@ function TicketPortal() {
           <div className="FormDetailsCN"> <FormDetails /></div>
           <div className="FormCompCN"> <FormComp /></div>
         </div>
+        <div className="footerPortal">
+            Nilwala Ticket Master Portal is a product of Leo Club of Matara Nilwala.<br/>
+            Made with ♡ by Nilwala Leos
+        </div>
       </div>
     </div>
   );
