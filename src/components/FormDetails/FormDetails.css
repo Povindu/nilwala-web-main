@@ -8,6 +8,7 @@
 }
 
 .ticketPrice{
+    text-align: center;
     font-size: 25px;
 }
 .paymentMethod
@@ -16,6 +17,11 @@
     font-size: 20px;
 }
 
+
 .contactInfo{
-    margin-top: 3vw;
+    margin-top: 60px;
+}
+
+.detailP{
+    font-size: 15px;
 }

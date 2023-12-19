@@ -31,20 +31,24 @@
     background-color: rgb(7, 28, 61);
     /* border:3px solid red; */
     width: 50%;
-    height: 600px;
+    height: 700px;
 }
 
 .FormCompCN{
     /* border:3px solid red; */
     background-color: rgb(8, 26, 55);
     width: 50%;
-    height: 600px;
+    height: 700px;
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .App{
-        height: 200vh !important;
+        font-size: 15px;
+    }
+
+    .App{
+        height: 280vh !important;
     }
     .mainContainer {
         flex-direction: column;
@@ -52,9 +56,12 @@
     }
     .FormDetailsCN{
         width:80% !important;
+        height: 750px !important;
     }
     .FormCompCN{
         width:80% !important;
     }
 
 }
+
+
