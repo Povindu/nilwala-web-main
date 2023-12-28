@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9ffa46a9.css",
-    "main.js": "/static/js/main.eac1d22c.js",
+    "main.js": "/static/js/main.c8a78510.js",
     "static/media/Background.png": "/static/media/Background.af2abfd2dcc3bc93b1a5.png",
     "static/media/nadil.PNG": "/static/media/nadil.dc03f5d0db6e365bda95.PNG",
     "static/media/uvindu.png": "/static/media/uvindu.bc16908160a4c2395e29.png",
@@ -20,10 +20,10 @@
     "static/media/club_logo.png": "/static/media/club_logo.49406b0c5d011ea7c801.png",
     "index.html": "/index.html",
     "main.9ffa46a9.css.map": "/static/css/main.9ffa46a9.css.map",
-    "main.eac1d22c.js.map": "/static/js/main.eac1d22c.js.map"
+    "main.c8a78510.js.map": "/static/js/main.c8a78510.js.map"
   },
   "entrypoints": [
     "static/css/main.9ffa46a9.css",
-    "static/js/main.eac1d22c.js"
+    "static/js/main.c8a78510.js"
   ]
 }
