@@ -63,7 +63,7 @@ const FormComp = () => {
   function handleImage(event) {
 
     const fileExtension = event.target.files[0].name.split(".").at(-1);
-    const allowedFileTypes = ["jpg", "png", "jpeg", "webp" ];
+    const allowedFileTypes = ["jpg", "png", "jpeg", "webp", "pdf" ];
 
 
     if(event.target.files[0].size > 50000000){
