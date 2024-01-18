@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       path: "/directory",
       element: <DirectoryPage/>,
     },
-  ]);
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

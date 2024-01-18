@@ -4,11 +4,10 @@ import {ref as sRef,uploadBytesResumable, getDownloadURL } from "firebase/storag
 import {ref, set, get, child} from "firebase/database";
 import { useRef, useState, useEffect } from 'react';
 import { useFormik } from 'formik'
-import { confirmAlert } from 'react-confirm-alert';
+// import { confirmAlert } from 'react-confirm-alert';
 
 
 import 'react-confirm-alert/src/react-confirm-alert.css';
-
 import './FormStyle.css';
 
 const FormComp = () => { 
@@ -19,12 +18,12 @@ const FormComp = () => {
   const [file, setFile] = useState("");
   const [percent, setPercent] = useState(0);
   const [imgURL, setImgURL] = useState();
-  const [resetData, setResetData] = useState(false);
+  let lastFormID2;
+  // const [resetData, setResetData] = useState(false);
 
 
 
   const onOptionChange = e => {
-
     setPosition(e.target.value)
     if((position === "Prospect" || position === "Leo")){
       formik.values.club = "Leo Club of Matara Nilwala";
@@ -41,16 +40,15 @@ const FormComp = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           let data = snapshot.val();
+          lastFormID2 = data.lastFormID;
           setLastFormID(data.lastFormID);
         } else {
           console.log("Data not available");
         }
-  
       })
       .catch((error) => {
         console.error(error);
       });
-
   }
 
   // Get the last form ID when the component is mounted
@@ -86,40 +84,15 @@ const FormComp = () => {
   }
 
 
-  // const confirmSubmit = () => {
-  //   confirmAlert({
-  //     title: 'Confirm to submit the ticket',
-  //     message: 'Confirm to submit the ticket',
-  //     buttons: [
-  //       {
-  //         label: 'Confirm',
-  //         onClick: () => {
-  //             if (!file) {
-  //               alert("Please upload an image first!");
-  //             }
-  //             else{
-  //               formik.handleSubmit();
-  //             }
-  //         }
-  //       },
-  //       {
-  //         label: 'Back',
-  //         onClick: () => {
-  //           alert('Click No')
-  //         }
-  //       }
-  //     ]
-  //   });
-  // }
 
 
   // Upload image to firebase storage
-  const handleUpload = () => {
+   const handleUpload = () => {
     if (!file) {
       alert("Please upload an image first!");
     }
     else{
-
+      console.log("Handle upload ID", lastFormID+1);
       const storageRef = sRef(storage, `/formDataUpload/${file.name}_F${lastFormID+1}.jpg`);
       const uploadTask = uploadBytesResumable(storageRef, file);
       
@@ -139,16 +112,9 @@ const FormComp = () => {
                   getDownloadURL(uploadTask.snapshot.ref).then((url) => {
                       
                       setImgURL(url);
-
+                      
                       // Update last form ID by incrementing
-                      set(ref(db, 'formData/lastFormID'), (lastFormID+1))
-                      .then( () => {
-                        // Success
-                      })
-                      .catch( (error) => {
-                        console.log(error);
-                      });
-
+                      
                   });
                 }
         );
@@ -166,7 +132,6 @@ const FormComp = () => {
       club: '',
     },
 
-
     onSubmit: (values, {resetForm}) => {
 
     resetForm({})
@@ -181,20 +146,48 @@ const FormComp = () => {
       imgURL: imgURL,
       position: position,
     }
+    let lastFormID3;
+    get(child(ref(db), 'formData/'))
+
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          let data = snapshot.val();
+          lastFormID2 = data.lastFormID;
+          // console.log(lastFormID2);
+          setLastFormID(data.lastFormID);
+        } else {
+          console.log("Data not available");
+        }
+        set(ref(db, 'formData/lastFormID'), (lastFormID2+1))
+
+
+        set(ref(db, 'formData/'+"F"+(lastFormID2+1)), data)
+        .then( () => {
     
-    set(ref(db, 'formData/'+"F"+(lastFormID+1)), data)
-    .then( () => {
+          // Update last form ID by incrementing
+          setImgURL();
+          if (inputFile.current) {
+            inputFile.current.value = "";
+            inputFile.current.type = "file";
+          }
+    
+        }).catch( (error) => {
+          console.log(error);
+        });
 
-      // Update last form ID by incrementing
-      setImgURL();
-      if (inputFile.current) {
-        inputFile.current.value = "";
-        inputFile.current.type = "file";
-      }
 
-    }).catch( (error) => {
-      console.log(error);
-    });
+
+
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    
+
+
+
+
+
 
     alert("Form submitted successfully! Admin will verify your details and send you a confirmation email soon.");
     setLastFormID(null);
@@ -352,7 +345,7 @@ const FormComp = () => {
 
           <div className="divupload">
             {(percent > 0) && <p className='imgUploadp'> Image upload {percent}% Done</p> }
-            {(!imgURL) && (lastFormID !== null) && <button type='button' className="upload-btn" onClick={handleUpload}>Upload Image</button>}
+            {(!imgURL) && (lastFormID2 !== null) && <button type='button' className="upload-btn" onClick={handleUpload}>Upload Image</button>}
           </div>
         
           <div className="divSubmit">
