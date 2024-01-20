@@ -3,21 +3,50 @@
 *{
     margin: 0%;
     padding: 0%;
+    /* height: max-content; */
 }
 
+body{
+    /* background-color: rgb(255, 170, 0); */
+}
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000 !important;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #002c4e !important;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #004f76;
+  }
+
 .App{
-    border: 1px solid rgb(19, 50, 91);
+    border: 1px solid rgb(0, 0, 0);
     /* border: none; */
     padding: 0%;
     margin: 0%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-image: url('../../assets/Background.png');
+    height:max-content;
+    /* background-color: sandybrown !important; */
+    /* border: 5px solid rgb(255, 0, 0); */
+    /* background-repeat: no-repeat; */
+    background-image: url('../../assets/Background7.png');
+    /* background-repeat:; */
+    /* background-color: rgb(0, 0, 0); */
+    /* background-image: linear-gradient(to bottom left, rgb(87, 58, 0),rgb(57, 32, 0)); */
+    background-size:cover;
+    
 }
 
 
 
 .mainContainer {
+    
+    padding-top: 100px;
     display: flex;
     flex-direction: row;
     width: 65%;
@@ -25,50 +54,108 @@
     align-items: center;
     height: 60%;
     margin-bottom: 60px;
+    margin-top: 400px;
 }
 
 .FormDetailsCN{
-    background-color: rgb(7, 28, 61);
+    border-radius: 20px 0px 0px 20px;
+    background-color: rgba(0, 0, 0, 0.744);
     /* border:3px solid red; */
     width: 50%;
     height: 700px;
+    color: black;
 }
 
 .FormCompCN{
+    border-radius: 0px 20px 20px 0px;
     /* border:3px solid red; */
-    background-color: rgb(8, 26, 55);
+    background-color: rgb(0, 0, 0);
     width: 50%;
     height: 700px;
 }
 
-.footerPortal{
-    width: 90%;
+
+
+.diya-doothak-div{
+    width:60%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.597);
+    border-radius: 20px;
+    /* border: 2px solid #03b3c7; */
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.diya-doothak-content{
+    /* border:3px solid red; */
+    width: 95%;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: #FFF5EA;
     margin: auto;
-    font-size: 12px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 400;
+
 }
+
+
+.diya-doothak-logo{
+    width: 20vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+
+
+.footerPortal{
+    /* border:3px solid red; */
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    /* margin-bottom: 20px; */
+    padding-bottom: 20px;
+    /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.749),rgb(255, 255, 255)); */
+}
+
+
+
 
 @media (max-width: 1000px) {
     .App{
         font-size: 15px;
+        background-size:cover;
+        /* border: 1px solid rgb(255, 0, 0); */
+        background-position: 50%;
     }
 
     .App{
-        height: 280vh !important;
+        height: 330vh !important;
     }
     .mainContainer {
         flex-direction: column;
         width: 100%;
     }
     .FormDetailsCN{
+        border-radius: 20px;
         width:80% !important;
         height: 750px !important;
+        margin-bottom: 20px;
     }
     .FormCompCN{
+        border-radius: 20px;
         width:80% !important;
+    }
+    .footerPortal{
+        width: 80% !important;	
+        /* text-overflow: ellipsis; */
+        font-size: 8px !important;
     }
 
 }

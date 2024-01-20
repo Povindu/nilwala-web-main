@@ -9,7 +9,7 @@ export default function FormDetails() {
 
         <div className="payment">
         {/* &nbsp; */}
-          <h1 className='ticketPrice'> Ticket Price <br/>  LKR 2000 </h1>
+          <h1 className='ticketPrice'> Ticket Price <br/>  Rs.800 </h1>
             <br/>
 
             <h1 className='paymentMethod'>Registration Steps</h1>
@@ -25,19 +25,19 @@ export default function FormDetails() {
             <h1 className='paymentMethod'>Payment Methods</h1>
             
             
-            • Account No:  101052733054
+            • Account No:  
             <br/>
-            • Holder's Name: N.A Abeygunawardena
+            • Holder's Name: 
             <br/>
-            • Branch: Sampath Bank Matara Super Branch
+            • Branch: 
 
         </div>
 
         <div className="contactInfo">
           For further clarifications please contact :
           <br/> Project Chairman
-          <br/> Leo Ama Samarawikrama
-          <br/> 0718899400
+          <br/> Leo Povindu Samarasekara
+          <br/> 070 3031782
         </div>
       </div>
     </div>

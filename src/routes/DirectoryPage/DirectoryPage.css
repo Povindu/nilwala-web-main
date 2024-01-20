@@ -9,6 +9,10 @@
   font-weight: 400;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .hero-directory{
   background-color: #003055;
   font-family: "Poppins", "Open Sans", -apple-system, BlinkMacSystemFont,
@@ -16,13 +20,9 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   width: 100vw;
   height: 930vh;
-  position: static;
   overflow-x: hidden;
   padding: 0;
   margin: 0 !important;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 .hero-directory::before {
   content: "";
@@ -76,9 +76,7 @@ h6,
 a:hover {
   text-decoration: none !important;
 }
-.hero-directory {
-  /* overflow-x: hidden; */
-  /* height: 500vh; */
+/* .hero-directory {
   position: absolute;
   top:0;
   left:0;
@@ -90,25 +88,23 @@ a:hover {
   background-repeat: no-repeat;
   background-image: linear-gradient(#003055, #0c0e1e, #082f4e);
   border: 1px solid red !important;
-  /* justify-content: space-between; */
-}
+} */
 
 /*-------------- Hero Section ----------*/
 .body-content-d {
+  
   position: absolute;
-  width: 100%;
+  width: 100vw;
   margin: auto;
   display: flex;
-  /* justify-content: space-between; */
   text-align: center;
 }
 .body-content-d p {
   font-size: 18px;
 }
 
-.gradient-border {
-  /* border: 1px solid red; */
-  color: #fff;
+.gradient-border-dir {
+  /* color: #ff0000; */
   background-color: rgba(252, 253, 253, 0.042);
   width: 80%;
   font-size: 16px;
@@ -118,7 +114,6 @@ a:hover {
   padding-bottom: 30px;
   border-radius: 30px;
   border: 2px solid #03b3c7;
-  text-align: justify;
   height: fit-content;
   text-align: center;
 }
@@ -131,7 +126,6 @@ a:hover {
 
 .nationalFlag {
   width: 60%;
-  /* border: 1px solid red; */
 }
 
 .anthem-title p {
@@ -183,10 +177,10 @@ a:hover {
   .body-content-d {
     width: 100%;
     top: 600px;
-    flex-direction: column-reverse; /* Stack items vertically */
+    flex-direction: column-reverse;
     align-items: center;
   }
-  .gradient-border {
+  .gradient-border-dir {
     color: #fff;
     background-color: rgba(252, 253, 253, 0.042);
     width: 100%;
@@ -196,6 +190,7 @@ a:hover {
     padding-bottom: 30px;
     border-radius: 30px;
     border: 2px solid #03b3c7;
+    
   }
 
   .nationalFlag img {
@@ -308,7 +303,7 @@ a:hover {
     font-size: 50px;
   }
 
-  .gradient-border p {
+  .gradient-border-dir p {
     /* border: 1px solid red; */
     font-size: 15px;
   }
@@ -331,7 +326,7 @@ a:hover {
     top: 450px;
     width: 100%;
   }
-  .gradient-border {
+  .gradient-border-dir {
     font-size: 12px;
   }
   .logo1 {
@@ -394,6 +389,7 @@ a:hover {
 }
 
 .logo5 {
+  
   height: 350px;
   margin-bottom: 30px;
 }
