@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.9dd41e0e.css",
-    "main.js": "/static/js/main.25ce7df5.js",
+    "main.css": "/static/css/main.7fd885ac.css",
+    "main.js": "/static/js/main.3c1c86c5.js",
     "static/media/Background7.png": "/static/media/Background7.be5605ddb96f5d59e463.png",
     "static/media/nadil.PNG": "/static/media/nadil.dc03f5d0db6e365bda95.PNG",
     "static/media/uvindu.png": "/static/media/uvindu.bc16908160a4c2395e29.png",
-    "static/media/NaadaLogo4.png": "/static/media/NaadaLogo4.8856259c64a634e941d7.png",
     "static/media/kashyapa.PNG": "/static/media/kashyapa.406a8d1e15c3c942bde2.PNG",
     "static/media/flag2.png": "/static/media/flag2.f98618019b1dfff4adba.png",
     "static/media/pngwing.com.png": "/static/media/pngwing.com.ffd67b70cb94d2bdd2b9.png",
@@ -13,6 +12,7 @@
     "static/media/Sathira.PNG": "/static/media/Sathira.9a932f37cb1f6a43a7f9.PNG",
     "static/media/nrimal.png": "/static/media/nrimal.6b592af27342413077bd.png",
     "static/media/seran.png": "/static/media/seran.93ca4ca8305d56f5b220.png",
+    "static/media/NaadaLogo4.png": "/static/media/NaadaLogo4.0ec506ffca6bdc38d66f.png",
     "static/media/nationalflag1.png": "/static/media/nationalflag1.3f89687c672b0923d2ed.png",
     "static/media/Leo-Logo.png": "/static/media/Leo-Logo.f11aa3795a909622e5ef.png",
     "static/media/Nadun.PNG": "/static/media/Nadun.e8a6e59deffbb13852e7.PNG",
@@ -20,11 +20,11 @@
     "static/media/naveen.png": "/static/media/naveen.9e97b63351965488bfb1.png",
     "static/media/club_logo.png": "/static/media/club_logo.49406b0c5d011ea7c801.png",
     "index.html": "/index.html",
-    "main.9dd41e0e.css.map": "/static/css/main.9dd41e0e.css.map",
-    "main.25ce7df5.js.map": "/static/js/main.25ce7df5.js.map"
+    "main.7fd885ac.css.map": "/static/css/main.7fd885ac.css.map",
+    "main.3c1c86c5.js.map": "/static/js/main.3c1c86c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dd41e0e.css",
-    "static/js/main.25ce7df5.js"
+    "static/css/main.7fd885ac.css",
+    "static/js/main.3c1c86c5.js"
   ]
 }
