@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa822922.css",
+    "main.css": "/static/css/main.9dd41e0e.css",
     "main.js": "/static/js/main.25ce7df5.js",
-    "static/media/Background7.png": "/static/media/Background7.88553fac8c0a88c2c2e8.png",
+    "static/media/Background7.png": "/static/media/Background7.be5605ddb96f5d59e463.png",
     "static/media/nadil.PNG": "/static/media/nadil.dc03f5d0db6e365bda95.PNG",
     "static/media/uvindu.png": "/static/media/uvindu.bc16908160a4c2395e29.png",
     "static/media/NaadaLogo4.png": "/static/media/NaadaLogo4.8856259c64a634e941d7.png",
@@ -20,11 +20,11 @@
     "static/media/naveen.png": "/static/media/naveen.9e97b63351965488bfb1.png",
     "static/media/club_logo.png": "/static/media/club_logo.49406b0c5d011ea7c801.png",
     "index.html": "/index.html",
-    "main.fa822922.css.map": "/static/css/main.fa822922.css.map",
+    "main.9dd41e0e.css.map": "/static/css/main.9dd41e0e.css.map",
     "main.25ce7df5.js.map": "/static/js/main.25ce7df5.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa822922.css",
+    "static/css/main.9dd41e0e.css",
     "static/js/main.25ce7df5.js"
   ]
 }
