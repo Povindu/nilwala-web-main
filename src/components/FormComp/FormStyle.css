@@ -50,6 +50,11 @@ select:-webkit-autofill:focus {
     padding: 8px;
 }
 
+
+.LeoStatus div{
+    padding-top: 5px;
+}
+
 .InpFile{
     font-family: 'Poppins', sans-serif;
 }
@@ -193,6 +198,7 @@ select {
     -webkit-appearance: none;
     width: 90%;
     font-size: 15px;
+    height: 42px;
     padding: 0.6em 6em 0.6em 0.8em;
     background-color : rgb(60, 40, 0); 
     border: none;
@@ -202,7 +208,11 @@ select {
 
   }
 
+.divLabDis{
+    margin-top: 10px;
+    margin-bottom: 15px;
 
+}
 
 input[type="file"]::file-selector-button {
     margin-top: 10px;

@@ -17,28 +17,25 @@ import "./FormStyle.css";
 const FormComp = () => {
   const [club, setClub] = useState();
   const [LeoStatus, setLeoStatus] = useState();
+  const [tempStatus, setTempStatus] = useState();
   const inputFile = useRef(null);
   const [lastFormID, setLastFormID] = useState(0);
   const [file, setFile] = useState("");
   const [percent, setPercent] = useState(0);
   const [imgURL, setImgURL] = useState();
 
-
-
-
   // Handle the change of Status and Clubs
 
   const onStatusChange = (e) => {
     setLeoStatus(e.target.value);
+    setClub("");
+    formik.values.position = "";
   };
 
   const onClubChange = (e) => {
     setClub(e.target.value);
     // console.log(e.target.value);
   };
-
-
-
 
   // Get the last form ID from firebase realtime database
   function getLastFormID() {
@@ -56,39 +53,40 @@ const FormComp = () => {
       });
   }
 
-
-
   // Get the last form ID when the component is mounted
   useEffect(() => {
     getLastFormID();
   }, []);
 
-
-
-
   function handleImage(event) {
-    const fileExtension = event.target.files[0].name.split(".").at(-1);
-    const allowedFileTypes = ["jpg", "png", "jpeg", "webp", "pdf"];
+    try {
+      const fileExtension = event.target.files[0].name.split(".").at(-1);
 
-    if (event.target.files[0].size > 50000000) {
-      alert("Image size is too large! Please select another image below 50mb.");
-      event.target.value = "";
-      event.target.type = "file";
-    } else {
-      if (allowedFileTypes.includes(fileExtension)) {
-        setFile(event.target.files[0]);
-      } else {
+      const allowedFileTypes = ["jpg", "png", "jpeg", "webp", "pdf"];
+
+      if (event.target.files[0].size > 50000000) {
         alert(
-          `Uploaded Filetype is not supported.\nFiletype must be ${allowedFileTypes.join(
-            ", "
-          )}`
+          "Image size is too large! Please select another image below 50mb."
         );
         event.target.value = "";
         event.target.type = "file";
+      } else {
+        if (allowedFileTypes.includes(fileExtension)) {
+          setFile(event.target.files[0]);
+        } else {
+          alert(
+            `Uploaded Filetype is not supported.\nFiletype must be ${allowedFileTypes.join(
+              ", "
+            )}`
+          );
+          event.target.value = "";
+          event.target.type = "file";
+        }
       }
+    } catch {
+      alert("Please upload an image first!");
     }
   }
-
 
   // const confirmSubmit = () => {
   //   confirmAlert({
@@ -116,7 +114,6 @@ const FormComp = () => {
   //   });
   // }
 
-  
   // Upload image to firebase storage
   const handleUpload = () => {
     if (!file) {
@@ -196,8 +193,7 @@ const FormComp = () => {
         .catch((error) => {
           console.log(error);
         });
-      
-      
+
       // setClub("");
       // setLeoStatus("");
       // setImgURL();
@@ -207,7 +203,6 @@ const FormComp = () => {
       );
       setLastFormID(null);
       getLastFormID();
-      
     },
   });
 
@@ -293,7 +288,14 @@ const FormComp = () => {
                   id="otherDis"
                   name="LeoStatus"
                   value="otherDis"
-                  checked={LeoStatus === "otherDis"}
+                  checked={
+                    LeoStatus === "otherDis" ||
+                    LeoStatus === "Leo District 306 A1" ||
+                    LeoStatus === "Leo District 306 B1" ||
+                    LeoStatus === "Leo District 306 B2" ||
+                    LeoStatus === "Leo District 306 C1" ||
+                    LeoStatus === "Leo District 306 C2"
+                  }
                   onChange={onStatusChange}
                 />
                 <label htmlFor="otherDis">
@@ -461,7 +463,50 @@ const FormComp = () => {
 
             {/* Club name - for other leos */}
 
-            {LeoStatus === "otherDis" && (
+            {(LeoStatus === "otherDis" ||
+              LeoStatus === "Leo District 306 A1" ||
+              LeoStatus === "Leo District 306 B1" ||
+              LeoStatus === "Leo District 306 B2" ||
+              LeoStatus === "Leo District 306 C1" ||
+              LeoStatus === "Leo District 306 C2") && (
+              <div className="divLabDis">
+                <label className="LabDis" htmlFor="district">
+                  Leo District
+                </label>
+
+                <select
+                  required={true}
+                  name="district"
+                  id="club"
+                  defaultValue="def"
+                  onChange={onStatusChange}
+                  value={LeoStatus}
+                >
+                  <option value="Leo District 306 A1">
+                    Leo District 306 A1
+                  </option>
+                  <option value="Leo District 306 B1">
+                    Leo District 306 B1
+                  </option>
+                  <option value="Leo District 306 B2">
+                    Leo District 306 B2
+                  </option>
+                  <option value="Leo District 306 C1">
+                    Leo District 306 C1
+                  </option>
+                  <option value="Leo District 306 C2">
+                    Leo District 306 C2
+                  </option>
+                </select>
+              </div>
+            )}
+
+            {(LeoStatus === "otherDis" ||
+              LeoStatus === "Leo District 306 A1" ||
+              LeoStatus === "Leo District 306 B1" ||
+              LeoStatus === "Leo District 306 B2" ||
+              LeoStatus === "Leo District 306 C1" ||
+              LeoStatus === "Leo District 306 C2") && (
               <div>
                 <div className="divLabClub">
                   <label className="LabClub" htmlFor="club">
@@ -487,7 +532,12 @@ const FormComp = () => {
           <div className="divPosi d">
             {(LeoStatus === "otherDis" ||
               LeoStatus === "A2 Leo" ||
-              LeoStatus === "Lion") && (
+              LeoStatus === "Lion" ||
+              LeoStatus === "Leo District 306 A1" ||
+              LeoStatus === "Leo District 306 B1" ||
+              LeoStatus === "Leo District 306 B2" ||
+              LeoStatus === "Leo District 306 C1" ||
+              LeoStatus === "Leo District 306 C2") && (
               <div className="position">
                 <label className="LabPosi" htmlFor="position">
                   Position
