@@ -16,9 +16,9 @@ export default function HomePageComp() {
           <ul className="site-menu">
 
 
-            {/* <li className="bar bar-nilwala-night">
+            <li className="bar bar-nilwala-night">
               <Link to='/leonaada24' className='button'>Buy Leo Naada 2024 Tickets 🎟️</Link>
-            </li> */}
+            </li>
             <li className="bar">
             <Link to='/chronicle' className='button'>Nilwala Chronicle</Link>
             </li>

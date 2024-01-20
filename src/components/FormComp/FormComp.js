@@ -274,9 +274,9 @@ const FormComp = () => {
                   type="radio"
                   id="a2"
                   name="LeoStatus"
-                  value="A2 Leo"
+                  value="Leo District 306 A2"
                   required={true}
-                  checked={LeoStatus === "A2 Leo"}
+                  checked={LeoStatus === "Leo District 306 A2"}
                   onChange={onStatusChange}
                 />
                 <label htmlFor="a2"> Leo from Leo District 306 A2</label>
@@ -302,6 +302,18 @@ const FormComp = () => {
                   {" "}
                   Leo from Leo District 306 A1/B1/B2/C1/C2
                 </label>
+              </div>
+              
+              <div>
+                <input
+                  type="radio"
+                  id="Multiple"
+                  name="LeoStatus"
+                  value="Multiple District 306"
+                  checked={LeoStatus === "Multiple District 306"}
+                  onChange={onStatusChange}
+                />
+                <label htmlFor="Multiple"> Council Officers from Multiple District 306</label>
               </div>
 
               <div>
@@ -333,7 +345,7 @@ const FormComp = () => {
           {/* Club name - for A2 Leos */}
 
           <div className="divClub d">
-            {LeoStatus === "A2 Leo" && (
+            {LeoStatus === "Leo District 306 A2" && (
               <div>
                 <div className="divLabClub">
                   <label className="LabClub" htmlFor="club">
@@ -531,8 +543,9 @@ const FormComp = () => {
 
           <div className="divPosi d">
             {(LeoStatus === "otherDis" ||
-              LeoStatus === "A2 Leo" ||
+              LeoStatus === "Leo District 306 A2" ||
               LeoStatus === "Lion" ||
+              LeoStatus === "Multiple District 306" ||
               LeoStatus === "Leo District 306 A1" ||
               LeoStatus === "Leo District 306 B1" ||
               LeoStatus === "Leo District 306 B2" ||
