@@ -81,6 +81,7 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 20px;
 
 }
 
@@ -167,29 +168,39 @@ body{
     }
 
     .App{
-        height: 280vh !important;
+        height: 400vh !important;
     }
     .mainContainer {
-        margin-top: 500px;
+        margin-top: 550px;
         flex-direction: column;
         width: 100%;
     }
     .FormDetailsCN{
         border-radius: 20px;
-        width:80% !important;
-        height: 900px !important;
+        width:90% !important;
+        height: 1000px !important;
         margin-bottom: 20px;
     }
     .FormCompCN{
         border-radius: 20px;
-        width:80% !important;
+        width:90% !important;
     }
     .footerPortal{
-        width: 80% !important;	
+        width: 90% !important;	
         /* text-overflow: ellipsis; */
         font-size: 8px !important;
     }
+    .diya-doothak-div{
+        width: 90% !important;
+        padding: 20px 8px !important;
+    }
+    .diya-doothak-logo{
+        width: 90% !important;
+    }
 
+    .diya-doothak-img{
+        width: 100% !important;
+    }
 }
 
 

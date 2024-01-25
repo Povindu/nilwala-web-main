@@ -20,12 +20,18 @@ function TicketPortal() {
           <p className="diya-doothak-content">Funds raised from this project will be allocated towards "Diya Doothak" initiative which aims to provide water filtering system to Anuradhapura Thambiya Dharmapala Maha Vidyalaya. 
           <br/>
           <br/>
+          Imagine the joy of children laughing, playing, and thriving with the gift of clean water where they dreams of a future free from the shadows of kidney diseases. 
+          <br/>
+          <br/>
+          Together, we can make this vision a reality by building a lifeline for generations to come.  
+          <br/>
+          <br/>
           <img className="diya-doothak-img" src={require("../../assets/DiyaDoothakFlyer.jpg")} alt="Diya Doothak Flyer" draggable="false"/>
           
           <br/>
           <p className="donateText">You can now donate to this project via Karuna.lk </p>
           <br/>
-          <a className="diya-link" href="https://app.karuna.lk/api/v1/program/diya-dothak-a2leos"> Donate Now</a>
+          <a className="diya-link" href="https://app.karuna.lk/api/v1/program/diya-dothak-a2leos"> Donate Now!</a>
           <br/>
           <br/>
           </p>
