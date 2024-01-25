@@ -12,6 +12,10 @@ export default function FormDetails() {
           <h1 className='ticketPrice'> TICKET PRICE <br/>  Rs.800 </h1>
             <br/>
 
+            Date: February 03rd 2024 <br/> 
+            Time: 5:30 PM onwards <br/> 
+            Venue: Sudarshi Open Theater, Colombo <br/> 
+            <br/> 
             <h1 className='paymentMethod'>Registration Steps</h1>
 
             1. Make the payment to the following account.<br/>
@@ -21,7 +25,7 @@ export default function FormDetails() {
             <p className='detailP'>After verifying the payment, you will recieve a confirmation email within few hours.<br/></p>
             <br/>
 
-            <br/>
+            {/* <br/> */}
             <h1 className='paymentMethod'>Payment Methods</h1>
             
             
