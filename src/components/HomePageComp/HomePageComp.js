@@ -17,7 +17,7 @@ export default function HomePageComp() {
 
 
             <li className="bar bar-nilwala-night">
-              <Link to='/leonaada24' className='button'>Buy Leo Naada 2024 Tickets 🎟️</Link>
+              <p className='button'>Leo Naada 2024 Tickets available at the venue🎟️</p>
             </li>
             <li className="bar">
             <Link to='/chronicle' className='button'>Nilwala Chronicle</Link>

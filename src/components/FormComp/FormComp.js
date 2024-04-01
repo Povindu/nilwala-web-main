@@ -17,7 +17,6 @@ import "./FormStyle.css";
 const FormComp = () => {
   const [club, setClub] = useState();
   const [LeoStatus, setLeoStatus] = useState();
-  const [tempStatus, setTempStatus] = useState();
   const inputFile = useRef(null);
   const [lastFormID, setLastFormID] = useState(0);
   const [file, setFile] = useState("");
@@ -119,6 +118,8 @@ const FormComp = () => {
     if (!file) {
       alert("Please upload an image first!");
     } else {
+      getLastFormID();
+
       const storageRef = sRef(
         storage,
         `/formDataUpload/${file.name}_F${lastFormID + 1}.jpg`
@@ -168,7 +169,6 @@ const FormComp = () => {
 
     onSubmit: (values, { resetForm }) => {
       resetForm({});
-      // setLeoStatus("");
 
       const data = {
         fullName: values.fullName,
@@ -299,11 +299,10 @@ const FormComp = () => {
                   onChange={onStatusChange}
                 />
                 <label htmlFor="otherDis">
-                  {" "}
                   Leo from Leo District 306 A1/B1/B2/C1/C2
                 </label>
               </div>
-              
+
               <div>
                 <input
                   type="radio"
@@ -313,7 +312,9 @@ const FormComp = () => {
                   checked={LeoStatus === "Multiple District 306"}
                   onChange={onStatusChange}
                 />
-                <label htmlFor="Multiple"> Council Officers from Multiple District 306</label>
+                <label htmlFor="Multiple">
+                  Council Officers from Multiple District 306
+                </label>
               </div>
 
               <div>
@@ -542,15 +543,16 @@ const FormComp = () => {
           {/* Position - Only for Leos & Lions */}
 
           <div className="divPosi d">
-            {(LeoStatus === "otherDis" ||
-              LeoStatus === "Leo District 306 A2" ||
-              LeoStatus === "Lion" ||
-              LeoStatus === "Multiple District 306" ||
-              LeoStatus === "Leo District 306 A1" ||
-              LeoStatus === "Leo District 306 B1" ||
-              LeoStatus === "Leo District 306 B2" ||
-              LeoStatus === "Leo District 306 C1" ||
-              LeoStatus === "Leo District 306 C2") && (
+            {LeoStatus ===
+              ("otherDis" ||
+                "Leo District 306 A2" ||
+                "Lion" ||
+                "Multiple District 306" ||
+                "Leo District 306 A1" ||
+                "Leo District 306 B1" ||
+                "Leo District 306 B2" ||
+                "Leo District 306 C1" ||
+                "Leo District 306 C2") && (
               <div className="position">
                 <label className="LabPosi" htmlFor="position">
                   Position

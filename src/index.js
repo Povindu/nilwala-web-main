@@ -10,10 +10,10 @@ import {
 import './index.css';
 
 // import HomePage from './routes/HomePage/HomePage'
-import TicketPortal from './routes/TicketPortal/TicketPortal'
-import ErrorPage from './routes/ErrorPage/ErrorPage';
-import ChroniclePage from './routes/ChroniclePage/ChroniclePage';
-import DirectoryPage from './routes/DirectoryPage/DirectoryPage';
+import TicketPortal from './pages/TicketPortal/TicketPortal'
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+import ChroniclePage from './pages/ChroniclePage/ChroniclePage';
+import DirectoryPage from './pages/DirectoryPage/DirectoryPage';
 
 import HomePageComp from './components/HomePageComp/HomePageComp';
 
@@ -24,7 +24,7 @@ const router = createHashRouter([
       errorElement: <ErrorPage />,
     },
     {
-      path: "/leonaada24",
+      path: "/leonaada24xyz",
       element: <TicketPortal/>,
     },
     {
