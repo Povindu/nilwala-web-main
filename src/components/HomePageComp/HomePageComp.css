@@ -458,7 +458,7 @@ a:hover {
 }
 
 .logo1 {
-    transform: translate(0px, -30px);
+  transform: translate(0px, -30px);
   height: 300px;
   width:300px;
 }
@@ -605,6 +605,8 @@ a:hover {
     grid-auto-columns: 100%;
   }
 }
+
+
 #shadow1 {
   /* border: 1px solid red; */
   top: 2300px;
@@ -895,6 +897,36 @@ svg {
 }
 
 @media screen and (max-width: 768px) {
+
+
+  .hero-text h2{
+    font-size: 30px !important;
+  }
+
+  .nav-bar-2{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .hero{
+    top: 150px;
+
+  }
+
+  .bar-nilwala-night{
+    font-size: 15px;
+  }
+
+  .logo1{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top:300px;
+    height: 200px;
+    width:200px;
+  }
+
   .xv {
     top: 1800px;
   }
@@ -948,7 +980,7 @@ svg {
     top: 370px;
   }
   .body-content {
-    top: 450px;
+    top: 500px;
     padding-left: 20px;
     padding-right: 20px;
     width: 100%;
@@ -956,9 +988,7 @@ svg {
   .gradient-border {
     font-size: 12px;
   }
-  .logo1 {
-    height: 100px;
-  }
+  
   #box1 {
     height: 200px;
     top: 1350px;
@@ -1037,24 +1067,50 @@ svg {
   }
 }
 @media screen and (max-width: 420px) {
-    .homeContain body {
-    height: 336vh;
+
+
+
+  .homeContain{
+    height: 205vh;
   }
+
+  .bar{
+    background-color: #004f76;
+    width:90%;
+    padding-top: 10px;
+    padding-bottom: 10px !important;
+    /* border: 1px solid red; */
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+
 
   .club-text {
     position: absolute;
-    top: 200px !important;
+    top: 0px !important;
     width: 80%;
     left: 50%;
     transform: translate(-50%, 0);
   }
-
-  .logo1 {
+  .site-menu{
+    padding: 0;
+    /* margin: auto; */
     /* border: 1px solid red; */
-    position: absolute;
-    top: 50px !important;
-    left: 50%;
-    transform: translate(-50%, 0);
+    text-align: center;
+    width: 100%;
+  }
+  .site-menu a{
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    font-size: 15px;
+  }
+
+
+  .logo1{
+    top:400px;
   }
   .logo9 {
     /* border: 1px solid red; */
@@ -1104,6 +1160,6 @@ svg {
   }
 
   .xv {
-    top: 2400px;
+    top: 1300px;
   }
 }

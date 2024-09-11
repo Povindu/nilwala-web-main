@@ -1,28 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
-  RouterProvider,
+  // createBrowserRouter,
+  // RouterProvider,
+  createHashRouter,
+  RouterProvider
 } from "react-router-dom";
 
 import './index.css';
 
 // import HomePage from './routes/HomePage/HomePage'
-import TicketPortal from './routes/TicketPortal/TicketPortal'
-import ErrorPage from './routes/ErrorPage/ErrorPage';
-import ChroniclePage from './routes/ChroniclePage/ChroniclePage';
-import DirectoryPage from './routes/DirectoryPage/DirectoryPage.js';
+import TicketPortal from './pages/TicketPortal/TicketPortal'
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+import ChroniclePage from './pages/ChroniclePage/ChroniclePage';
+import DirectoryPage from './pages/DirectoryPage/DirectoryPage';
 
 import HomePageComp from './components/HomePageComp/HomePageComp';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
       path: "/",
       element: <HomePageComp/>,
       errorElement: <ErrorPage />,
     },
     {
-      path: "/nilwalanight23",
+      path: "/leonaada24xyz",
       element: <TicketPortal/>,
     },
     {
@@ -40,4 +42,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <RouterProvider router={router} />
 );
-

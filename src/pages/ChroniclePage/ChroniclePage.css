@@ -1,0 +1,15 @@
+.desktop *{
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+}
+
+
+.desktop{
+    width: 100%;
+}
+
+.desktop iframe{
+    width:100%;
+    height:800px;
+}

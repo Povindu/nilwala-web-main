@@ -5,6 +5,24 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* border: 1px solid green; */
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0 0 0px 1000px rgba(74, 50, 0, 0.371) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
 /* Firefox */
 .formContainer input[type=number] {
   -moz-appearance: textfield;
@@ -13,7 +31,7 @@ input::-webkit-inner-spin-button {
 
 
 .formContainer *{
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: Popins, sans-serif;
 }
 
@@ -22,34 +40,54 @@ input::-webkit-inner-spin-button {
 }
 
 .formContainer label{
-    color: #a4e8ff;
+    color: #ffffff;
 }
 
 .d{
-    font-family: Popins, sans-serif;
-    /* border: 1px solid red; */
+    font-family: 'Poppins', sans-serif;
     width: 85%;
     margin: auto;
-    /* text-align: center; */
     padding: 8px;
 }
+
+
+.LeoStatus div{
+    padding-top: 5px;
+}
+
+.InpFile{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.upload-btn{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 18px;
+    background-color: rgb(59, 40, 0);
+    border: 1px solid #eca900;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+}
+
 
 .i{
     margin-top: 5px;
     appearance: none;
     border: none;
     outline: none;
-    border-bottom: .2em solid #007db2;
+    border-bottom: .2em solid #eca900;
     width:90%;
     border-radius: .2em .2em 0 0;
     padding: .4em;
-    color: #1e76e9;
+    color: #ffffff;
 }
 
 .i, textarea {
-    color: rgb(219, 251, 255);
-    /* background-color : #92dcff;  */
-    background-color : rgb(11, 33, 68); 
+    /* padding-left: 15px; */
+    padding: 10px 12px;
+    color: rgb(255, 255, 255);
+    background-color : rgba(253, 169, 0, 0.371); 
 }
 
 .divupload{
@@ -68,21 +106,25 @@ input::-webkit-inner-spin-button {
 }
 
 .imgUploadp{
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 5px;
     font-size: 6px;
     
 }
 
 .divSubmit{
-    /* border: 1px solid #3ed2ff;	 */
     width: 80%;
     margin: auto;
     text-align: center;
 }
 
 .btn-submit{
-    color: black;
-    padding: 3px 5px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 18px;
+    background-color: rgb(59, 40, 0);
+    border: 1px solid #eca900;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
 }
 
 .divLabFile{
@@ -98,34 +140,38 @@ input::-webkit-inner-spin-button {
 }
 
 
-/* body {
-	font-family: "Inter", sans-serif;
-	color: white;
-	font-size: calc(1em + 1.25vw);
-	background-color: mix(#fff, #007db2, 90%);
-} */
 
-.position{
+.status{
     margin-top: 10px;
     font-size: 15px;
 }
+
+.position p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.position label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
 .status label{
     margin: 5px;
 }
 .status input{
     margin-right: 5px;
 }
-.nilwalaPos div{
+/* .nilwalaPos div{
     display: inline;
     margin: 10px;
 }
 
 .nilwalaPos p{
     font-size: 15px;
-    /* margin-left: 20px; */
 
     margin-bottom: 5px;
-}
+} */
 
 .visitPos{
     margin-top: 20px;
@@ -140,6 +186,54 @@ input::-webkit-inner-spin-button {
     margin: 10px;
 }
 
+.clubSelect{
+    min-width: 350px;
+    
+}
 
+  
+select {
+    margin-top: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 90%;
+    font-size: 15px;
+    height: 42px;
+    padding: 0.6em 6em 0.6em 0.8em;
+    background-color : rgb(60, 40, 0); 
+    border: none;
+    border-bottom: .2em solid #eca900;
+    border-radius: 0.25rem;
+    cursor: pointer;
 
+  }
 
+.divLabDis{
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+}
+
+input[type="file"]::file-selector-button {
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 0px 10px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(76, 53, 0);
+    border: 1px solid #eca900;
+    color: rgb(255, 255, 255) !important;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    transition: background-color 200ms;
+  }
+  
+  /* file upload button hover state */
+  input[type="file"]::file-selector-button:hover {
+    background-color: rgb(232, 158, 0);
+  }
+  
+  /* file upload button active state */
+  input[type="file"]::file-selector-button:active {
+    background-color: rgb(211, 134, 0);
+  }

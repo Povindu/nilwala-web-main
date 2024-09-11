@@ -17,14 +17,14 @@ export default function HomePageComp() {
 
 
             <li className="bar bar-nilwala-night">
-              <Link to='/nilwalanight23' className='button'>Nilwala Night Tickets 🎟️</Link>
+              <p className='button'>Leo Naada 2024 Tickets available at the venue🎟️</p>
             </li>
             <li className="bar">
             <Link to='/chronicle' className='button'>Nilwala Chronicle</Link>
             </li>
-            <li className="bar">
-            {/* <Link to='/directory' className='button'>Club Directory</Link> */}
-            </li>
+            {/* <li className="bar">
+            <Link to='/directory' className='button'>Club Directory</Link>
+            </li> */}
             
             {/* <li className="bar">
               <a href="index.html">Sign In</a>

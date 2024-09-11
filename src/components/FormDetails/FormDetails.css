@@ -1,13 +1,18 @@
+
+
+
 .FDouter *{
-    color: #dff7ff;
+    color: #FFF5EA;
     font-family: 'Poppins', sans-serif;
 }
 
 .FDinner{
     padding: 30px;
+    width: 90%;
 }
 
 .ticketPrice{
+    text-align: center;
     font-size: 25px;
 }
 .paymentMethod
@@ -16,6 +21,11 @@
     font-size: 20px;
 }
 
+
 .contactInfo{
-    margin-top: 3vw;
+    margin-top: 40px;
+}
+
+.detailP{
+    font-size: 15px;
 }
