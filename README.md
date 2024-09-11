@@ -1,4 +1,4 @@
-# Nilwala Ticket Master - Client
+# Nilwala Ticket Master Client integration with Nilwala Official Website
 
 This is the client side of the Nilwala Ticket Master, a ticket buying platform built with React and Firebase.
 
